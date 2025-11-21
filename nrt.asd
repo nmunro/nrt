@@ -3,11 +3,14 @@
 ;;; Copyright (C) 2025 NMunro [nmunro@duck.com]
 
 (asdf:defsystem #:nrt
-  :description "A basic application."
+  :description "Ningle Response Toolkit"
   :author      "NMunro [nmunro@duck.com]"
   :license     "BSD 3"
   :version     "0.1.0"
   :depends-on  (:lack
-                :ningle)
+                :ningle
+                :djula)
   :serial t
-  :components ((:file "src/main")))
+  :components ((:file "src/util")
+               (:file "src/backends")
+               (:file "src/main")))
