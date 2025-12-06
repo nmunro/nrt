@@ -18,7 +18,7 @@
 (defun %set-status (status)
   (setf (lack.response:response-status ningle:*response*) status))
 
-(defun response (kind body &key (status 200) (headers nil))
+(defun response (kind body &key (status nrt/http-status:OK) (headers nil))
   (let ((backend (%lookup-backend kind)))
     (%set-status status)
     (%set-headers (append (getf backend :default-headers) headers))

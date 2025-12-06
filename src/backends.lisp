@@ -16,6 +16,3 @@
     (destructuring-bind (template &rest args) body
       (apply #'djula:render-template* template nil args)))
   :default-headers '("Content-Type" "text/html; charset=utf-8"))
-
-
-
