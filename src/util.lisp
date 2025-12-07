@@ -1,12 +1,12 @@
 ;;; util.lisp
 ;;; SPDX-License-Identifier: BSD 3
 ;;; Copyright (C) 2025 NMunro [nmunro@duck.com]
-(defpackage #:nrt/util
+(defpackage nrt/util
   (:use #:cl)
   (:export #:*response-backends*
            #:define-response-backend))
 
-(in-package #:nrt/util)
+(in-package nrt/util)
 
 (defvar *response-backends* (make-hash-table)
   "Map backend kind (keywords like :JSON) to backend definitions.")

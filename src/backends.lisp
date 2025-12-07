@@ -1,10 +1,10 @@
 ;;; backends.lisp
 ;;; SPDX-License-Identifier: BSD 3
 ;;; Copyright (C) 2025 NMunro [nmunro@duck.com]
-(defpackage #:nrt/backends
+(defpackage nrt/backends
   (:use #:cl))
 
-(in-package #:nrt/backends)
+(in-package nrt/backends)
 
 (nrt/util:define-response-backend :json
     (lambda (data)

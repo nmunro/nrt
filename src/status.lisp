@@ -1,80 +1,81 @@
 ;;; status.lisp
 ;;; SPDX-License-Identifier: BSD 3
 ;;; Copyright (C) 2025 NMunro [nmunro@duck.com]
-(defpackage #:nrt/http-status
-  (:use #:cl)
-  (:exports ;; 1XX
-            #:CONTINUE
-            #:SWITCHING-PROTOCOLS
-            #:PROCESSING
-            #:EARLY-HINTS
+(defpackage nrt/http-status
+    (:use #:cl)
+    (:shadow #:continue)
+    (:export ;; 1XX
+             #:CONTINUE
+             #:SWITCHING-PROTOCOLS
+             #:PROCESSING
+             #:EARLY-HINTS
 
-            ;; 2XX
-            #:OK
-            #:CREATED
-            #:ACCEPTED
-            #:NON-AUTHORITIVE-INFORMATION
-            #:NO-CONTENT
-            #:RESET-CONTENT
-            #:PARIAL-CONTENT
-            #:MULTI-STATUS
-            #:ALREADY-REPORTED
-            #:IM-USED
+             ;; 2XX
+             #:OK
+             #:CREATED
+             #:ACCEPTED
+             #:NON-AUTHORITATIVE-INFORMATION
+             #:NO-CONTENT
+             #:RESET-CONTENT
+             #:PARTIAL-CONTENT
+             #:MULTI-STATUS
+             #:ALREADY-REPORTED
+             #:IM-USED
 
-            ;; 3XX
-            #:MULTIPLE-CHOICES
-            #:MOVED-PERMANENTLY
-            #:FOUND
-            #:SEE-OTHER
-            #:NOT-MODIFIED
-            #:USE-PROXY
-            #:SWITCH-PROXY
-            #:TEMPORARY-REDIRECT
-            #:PERMANENTLY-REDIRECT
-            
-            ;; 4XX
-            #:BAD-REQUEST
-            #:UNAUTHORIZED
-            #:PAYMENT-REQUIRED
-            #:FORBIDDEN
-            #:NOT-FOUND
-            #:METHOD-NOT-ALLOWED
-            #:NOT-ACCEPTABLE
-            #:PROXY-AUTHENTICATION-FAILED
-            #:REQUEST-TIMEOUT
-            #:CONFLICT
-            #:GONE
-            #:LENGTH-REQUIRED
-            #:PRECONDITION-FAILED
-            #:PAYLOAD-TOO-LARGE
-            #:URI-TOO-LONG
-            #:UNSUPPORTED-MEDIA-TYPE
-            #:RANGE-NOT-SATISFIABLE
-            #:EXPECTATION-FAILED
-            #:IM-A-TEAPOT
-            #:MISDIRECTED-REQUEST
-            #:UNPROCESSABLE-CONTENT
-            #:LOCKED
-            #:FAILED-DEPENDENCY
-            #:TOO-EARLY
-            #:UPGRADE-REQUIRED
-            #:PRECONDITION-REQUIRED
-            #:TOO-MANY-REQUESTS
-            #:REQUEST-HEADER-FIELDS-TOO-LARGE
-            #:UNAVAILABLE-FOR-LEGAL-REASONS
+             ;; 3XX
+             #:MULTIPLE-CHOICES
+             #:MOVED-PERMANENTLY
+             #:FOUND
+             #:SEE-OTHER
+             #:NOT-MODIFIED
+             #:USE-PROXY
+             #:SWITCH-PROXY
+             #:TEMPORARY-REDIRECT
+             #:PERMANENT-REDIRECT
+             
+             ;; 4XX
+             #:BAD-REQUEST
+             #:UNAUTHORIZED
+             #:PAYMENT-REQUIRED
+             #:FORBIDDEN
+             #:NOT-FOUND
+             #:METHOD-NOT-ALLOWED
+             #:NOT-ACCEPTABLE
+             #:PROXY-AUTHENTICATION-FAILED
+             #:REQUEST-TIMEOUT
+             #:CONFLICT
+             #:GONE
+             #:LENGTH-REQUIRED
+             #:PRECONDITION-FAILED
+             #:PAYLOAD-TOO-LARGE
+             #:URI-TOO-LONG
+             #:UNSUPPORTED-MEDIA-TYPE
+             #:RANGE-NOT-SATISFIABLE
+             #:EXPECTATION-FAILED
+             #:IM-A-TEAPOT
+             #:MISDIRECTED-REQUEST
+             #:UNPROCESSABLE-CONTENT
+             #:LOCKED
+             #:FAILED-DEPENDENCY
+             #:TOO-EARLY
+             #:UPGRADE-REQUIRED
+             #:PRECONDITION-REQUIRED
+             #:TOO-MANY-REQUESTS
+             #:REQUEST-HEADER-FIELDS-TOO-LARGE
+             #:UNAVAILABLE-FOR-LEGAL-REASONS
 
-            ;; 5XX
-            #:INTERNAL-SERVER-ERROR
-            #:NOT-IMPLEMENTED
-            #:BAD-GATEWAY
-            #:SERVICE-UNAVAILABLE
-            #:GATEWAY-TIMEOUT
-            #:HTTP-VERSION-NOT-SUPPORTED
-            #:VARIANT-ALSO-NEGOTIATES
-            #:INSUFFICIENT-STORAGE
-            #:LOOP-DETECTED
-            #:NOT-EXTENDED
-            #:FURTHER-AUTHENTICATION-REQUIRED))
+             ;; 5XX
+             #:INTERNAL-SERVER-ERROR
+             #:NOT-IMPLEMENTED
+             #:BAD-GATEWAY
+             #:SERVICE-UNAVAILABLE
+             #:GATEWAY-TIMEOUT
+             #:HTTP-VERSION-NOT-SUPPORTED
+             #:VARIANT-ALSO-NEGOTIATES
+             #:INSUFFICIENT-STORAGE
+             #:LOOP-DETECTED
+             #:NOT-EXTENDED
+             #:FURTHER-AUTHENTICATION-REQUIRED))
 
 (in-package nrt/http-status)
 
@@ -86,7 +87,7 @@
 (defparameter OK 200)
 (defparameter CREATED 201)
 (defparameter ACCEPTED 202)
-(defparameter NON-AUTHORITIVE-INFORMATION 203)
+(defparameter NON-AUTHORITATIVE-INFORMATION 203)
 (defparameter NO-CONTENT 204)
 (defparameter RESET-CONTENT 205)
 (defparameter PARTIAL-CONTENT 206)

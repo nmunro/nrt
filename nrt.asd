@@ -9,9 +9,10 @@
   :version     "0.1.1"
   :depends-on  (:lack
                 :ningle
-                :djula)
+                :djula
+                :com.inuoe.jzon)
   :serial t
-  :components ((:file "src/util")
-               (:file "src/status")
+  :components ((:file "src/status")
+               (:file "src/util")
                (:file "src/backends")
                (:file "src/main")))

@@ -1,12 +1,12 @@
 ;;; main.lisp
 ;;; SPDX-License-Identifier: BSD 3
 ;;; Copyright (C) 2025 NMunro [nmunro@duck.com]
-(defpackage #:nrt
+(defpackage nrt
   (:use #:cl)
   (:export #:define-response-backend
            #:response))
 
-(in-package #:nrt)
+(in-package nrt)
 
 (defun %lookup-backend (kind)
   (or (gethash kind nrt/util:*response-backends*)
